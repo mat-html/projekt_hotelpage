@@ -29,7 +29,7 @@
               <a class="nav-link" href="hilfe.php">Hilfe</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="sign_in.php">Sign in</a>
+              <a class="nav-link" href="sign_up.php">Sign up</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="login.php">Log in</a>

@@ -9,10 +9,10 @@
     </div>
     
     <div class="container">
-        <form action="" method="post">
+        <form action="includes/process-login.php" method="POST">
             <div class="mb-3 mt-3">
-                <label for="username">Username:</label><br>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                <label for="username">Username/E-mail:</label><br>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username/e-mail" required>
             </div>
             <div class="mb-3">
                 <label for="password">Password:</label><br>

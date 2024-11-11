@@ -8,7 +8,7 @@
         <h1 class="display-2">Sign Up</h1>
     </div>
     <div class="container">
-        <form action="process-signup.php" method="POST">
+        <form action="includes/process-signup.php" method="POST">
             <div class="input-group mt-3">
                 <label for="last-name"></label>
                 <span class="input-group-text">Last name</span>
@@ -19,6 +19,12 @@
                 <label for="first-name"></label>
                 <span class="input-group-text">First name</span>
                 <input type="text" class="form-control" name="first-name" id="first-name" placeholder="Enter your first name" required>
+            </div>
+            <br>
+            <div class="input-group">
+                <label for="username"></label>
+                <span class="input-group-text">Username</span>
+                <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username" required>
             </div>
             <br>
             <div class="input-group">
@@ -61,7 +67,7 @@
             </div>
             <br>
             <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Sign In</button>
+                <button type="submit" name="submit" class="btn btn-primary">Sign In</button>
             </div>
         </form>
     </div>
