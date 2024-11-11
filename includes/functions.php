@@ -1,9 +1,9 @@
 <?php
 
 function emptyInputSignup($lastname, $firstname, $username, $email, $password, 
-$confirm_password, $phonenumb, $birthday, $gender){
+$confirm_password, $phonenumb, $birthday){
 
-    if(empty($lastname) || empty($firstname) || empty($username) || empty($email) || empty($password) || empty($confirm_password) || empty($phonenumb) || empty($birthday) || empty($gender)){
+    if(empty($lastname) || empty($firstname) || empty($username) || empty($email) || empty($password) || empty($confirm_password) || empty($phonenumb) || empty($birthday)){
         $result = true;
     }
 
@@ -14,7 +14,7 @@ $confirm_password, $phonenumb, $birthday, $gender){
 }
 
 function invalidUsername($username){
-    if(!preg_match("/^[a-zA-Z0-9]*$/",$username)){
+    if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
         $result = true;
     }
 
@@ -47,10 +47,10 @@ function passwordMatch($password, $confirm_password){
 }
 
 function usernameOrEmailExists($conn, $username, $email){
-    $sql = "SELECT * FROM users WHERE usersUid = ? || OR usersEmail = ?;";
+    $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: ../signup.php");
+        header("location: ../sign_up.php");
         exit();
     }
     mysqli_stmt_bind_param($stmt, "ss", $username, $email);
@@ -70,20 +70,18 @@ function usernameOrEmailExists($conn, $username, $email){
     mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $lastname, $firstname, $username, $email, $password, 
-$phonenumb, $birthday, $gender){
-    $sql = "INSERT INTO users (usersLastName, usersFirstName, usersUid, usersEmail, usersPassword, usersPhonenumber, usersBirthday, usersGender) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+function createUser($conn, $lastname, $firstname, $username, $email, $password, $phonenumb, $birthday){
+    $sql = "INSERT INTO users (usersLastName, usersFirstName, usersUid, usersEmail, usersPassword, usersPhonenumber, usersBirthday) VALUES (?, ?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: ../signup.php");
+        header("location: ../sign_up.php");
         exit();
     }
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssssssss", $lastname, $firstname, $username, $email, $hashedPassword, 
-    $phonenumb, $birthday, $gender);
+    mysqli_stmt_bind_param($stmt, "sssssss", $lastname, $firstname, $username, $email, $hashedPassword, $phonenumb, $birthday);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../signup.php?error=none");
+    header("location: ../sign_up.php?error=none");
     exit();
 }

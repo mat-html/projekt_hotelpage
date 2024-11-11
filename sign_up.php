@@ -57,15 +57,6 @@
                 <input class="form-control" type="date" name="date-of-birth" id="date-of-birth" placeholder="DD.MM.YYYY" required>
             </div>
             <br>
-            <div class="input-group">
-                <span class="input-group-text">Gender</span>
-                <select for="gender" name="gender" class="form-control">
-                    <option name="gender" id="female" value="female">Female</option>
-                    <option name="gender" id="male" value="male">Male</option>
-                    <option name="gender" id="other" value="other">Other</option> 
-                </select>
-            </div>
-            <br>
             <div class="d-grid">
                 <button type="submit" name="submit" class="btn btn-primary">Sign In</button>
             </div>
