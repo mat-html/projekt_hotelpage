@@ -3,7 +3,7 @@
   include("navbar.php");
 
 ?>
-
+<section>
     <div class="container">
         <h1 class="display-2">Sign Up</h1>
     </div>
@@ -61,7 +61,31 @@
                 <button type="submit" name="submit" class="btn btn-primary">Sign In</button>
             </div>
         </form>
+        <?php
+        if(isset($_GET["error"])){
+            if($_GET["error"] == "emptyinput"){
+                echo "<p>Fill in all fields!</p>";
+            }
+            else if($_GET["error"] == "invalidUsername"){
+                echo "<p>Choose a proper username!</p>";
+            }
+            else if($_GET["error"] == "passwordsdontmatch"){
+                echo "<p>Passwords doesn't match!</p>";
+            }
+            else if($_GET["error"] == "usernametaken"){
+            echo "<p>Username is already taken!</p>";
+            }
+            else if($_GET["error"] == "stmtfailed"){
+                echo "<p>Something went wrong, try again!</p>";
+            }
+            else if($_GET["error"] == "error=none"){
+                echo "<p>You have signed up!</p>";
+            }
+        }
+        ?>
     </div>
+</section>
+
 <?php
     include("footer.php");
 ?>
