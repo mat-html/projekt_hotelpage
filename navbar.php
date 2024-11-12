@@ -36,7 +36,7 @@
             <?php
               if(isset($_SESSION["useruid"])){
                 echo '<li class="nav-item"><a class="nav-link" href="profile.php">Profile Page</a></li>';
-                echo '<li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>';
+                echo '<li class="nav-item"><a class="nav-link" href="includes/logout.php">Log out</a></li>';
               }
               else {
                 echo '<li class="nav-item"><a class="nav-link" href="sign_up.php">Sign up</a></li>';
