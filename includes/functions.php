@@ -105,7 +105,7 @@ function loginUser($conn, $username, $password){
         exit();
     }
 
-    $passwordHashed = $uidExist["usersPasword"];
+    $passwordHashed = $uidExist["usersPassword"];
     $checkPassword = password_verify($password, $passwordHashed);
 
     if($checkPassword === false){

@@ -22,7 +22,7 @@
                 <p>Password vergessen? <a href="password_reset.php" class="text-decoration-none">Reset now!</a></p>
             </div>
             <div class="d-grid gap-3">
-                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                <button type="submit" name="submit" class="btn btn-primary btn-block">Log In</button>
             </div>
         </form>
         <?php
