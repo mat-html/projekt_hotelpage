@@ -1,10 +1,12 @@
 @import url(/my.css/font.css);
 
 :root {
-    --c-brand-primary: #960202;
-    --c-brand-secondary: #595858;
-    --c-brand-lignt: #FAF3F3;
-    --c-body: #fbfbda;
+    --c-white: #ffffff;
+    --c-dirty-white: #f7f7f7;
+    --c-gray: #2a2c2f;
+    --c-dark-blue: #14274a;
+    --c-beige: #e0b973;
+    --c-black: #000000;
     --font-header: "LatoHeader", sans-serif;
     --font-body: "LatoBody", monospace;
     --box-shadow: 0px 15px 25px rgb(0, 0, 0 ,0.8);
@@ -13,10 +15,89 @@
 
 body {
     font-family: var(--font-body);
-    background-color: var(--c-body);
-    color: var(--c-brand-secondary);
+    background-color: var(--c-white);
+    color: var(--c-black);
+    max-width: 100vw;
 }
 
+#hero {
+    height: 60vh;
+    background: linear-gradient(#ffffff82, #fffefe82), url(../img/hotel1.jpg);
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* NAVBAR */
+.nav-item{
+    margin: 0.25em 0.40em 0.25em 0.40em;
+    padding: 0.4em 0.5em 0.4em 0.5em;
+    border: none;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+
+a .nav-link {
+    text-decoration: none;
+    border-radius: 10px;
+    transition: var(--transform);
+}
+
+a:not(.nohover):not(.btn):hover{
+    color: var(--c-white);
+    transform: scale(1.2);
+} 
+
+a:not(.nohover):focus {
+    text-decoration: underline;
+}
+
+.btn-sm {
+    font-weight: bold;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    padding: 0.15em 0.5em;
+    margin: 0.6em 0.9em 0.4em 0.40em ;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+.btn-lg{
+    font-weight: bold;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    padding: 0.2em 1em;
+    margin: 0.6em 0.9em 0.4em 0.40em ;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+.btn-outline-success{
+    border: 2px solid var(--c-beige);
+    color: var(--c-white);
+    background-color: var(--c-beige);
+}
+
+.btn-outline-secondary {
+    border: 2px solid var(--c-beige);
+    color: var(--c-white);
+    background-color: var(--c-beige);
+}
+
+.btn:hover{
+    border: 2px solid var(--c-beige);
+    color: var(--c-beige);
+    background-color: var(--c-white);
+    transform: scale(1.2);
+    border-radius: 10px;
+}
+
+
+
+/* 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 600;
@@ -56,7 +137,7 @@ img {
 .btn-brand {
     background-color: var(--c-brand-primary);
     border-color: var(--c-brand-primary);
-    color: var(--c-body);
+    color: var(--c-);
 }
 
 .btn-brand:hover {
@@ -85,4 +166,5 @@ img {
     background: linear-gradient(#0000007a, #0000006b), url(../img/hotel3.jpg);
     background-repeat: no-repeat;
     background-size: 100vw;
-}
+    
+} */

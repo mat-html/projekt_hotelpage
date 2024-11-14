@@ -3,6 +3,7 @@
   include("navbar.php");
 
 ?>
+<section>
     <div class="container">
         <h1 class="display-2">Hilfe & FAQ - Muster Hotel</h1>
     </div>
@@ -12,7 +13,7 @@
             <h2 class="h2"> 1) Buchungen und Reservierungen</h2>
                 <h3 class="h5">Wie kann ich meine Reservierung vornehmen?</h3>
                     <p class="antwort">Sie können eine Reservierung direkt auf unserer 
-                        Website <a href="Muster_Hotel.php" class="text-decoration-none">www.muster-hotel.com</a> über unser 
+                        Website <a href="#" class="text-decoration-none">www.muster-hotel.com</a> über unser 
                         Online-Reservierungssystem vornehmen. Alternativ erreichen Sie
                         uns telefonisch unter +43 1 234 567 890 oder per E-Mail unter 
                         reservierung@muster-hotel.at.</p>
@@ -102,6 +103,7 @@
             Kundenservice. Weitere Informationen finden Sie in unserem 
             <a href="impressum.php" class="text-decoration-none">Impressum.</a></p>
     </div>
+</section>
 <?php
     include("footer.php");
 ?>
