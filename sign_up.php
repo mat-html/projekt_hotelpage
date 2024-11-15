@@ -1,6 +1,6 @@
 <?php
 
-  include("navbar.php");
+include("navbar.php");
 
 ?>
 <section>
@@ -40,9 +40,9 @@
             </div>
             <br>
             <div class="input-group">
-              <label for="confirm_password"></label><br>
-              <span class="input-group-text">Confirm password</span>
-              <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your new password" required>
+                <label for="confirm_password"></label><br>
+                <span class="input-group-text">Confirm password</span>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your new password" required>
             </div>
             <br>
             <div class="input-group">
@@ -62,23 +62,18 @@
             </div>
         </form>
         <?php
-        if(isset($_GET["error"])){
-            if($_GET["error"] == "emptyinput"){
+        if (isset($_GET["error"])) {
+            if ($_GET["error"] == "emptyinput") {
                 echo "<p>Fill in all fields!</p>";
-            }
-            else if($_GET["error"] == "invalidUsername"){
+            } else if ($_GET["error"] == "invalidUsername") {
                 echo "<p>Choose a proper username!</p>";
-            }
-            else if($_GET["error"] == "passwordsdontmatch"){
+            } else if ($_GET["error"] == "passwordsdontmatch") {
                 echo "<p>Passwords doesn't match!</p>";
-            }
-            else if($_GET["error"] == "usernametaken"){
-            echo "<p>Username is already taken!</p>";
-            }
-            else if($_GET["error"] == "stmtfailed"){
+            } else if ($_GET["error"] == "usernametaken") {
+                echo "<p>Username is already taken!</p>";
+            } else if ($_GET["error"] == "stmtfailed") {
                 echo "<p>Something went wrong, try again!</p>";
-            }
-            else if($_GET["error"] == "error=none"){
+            } else if ($_GET["error"] == "error=none") {
                 echo "<p>You have signed up!</p>";
             }
         }
@@ -87,5 +82,5 @@
 </section>
 
 <?php
-    include("footer.php");
+include("footer.php");
 ?>

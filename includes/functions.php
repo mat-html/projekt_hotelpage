@@ -1,55 +1,51 @@
 <?php
 
-function emptyInputSignup($lastname, $firstname, $username, $email, $password, 
-$confirm_password, $phonenumb, $birthday){
+function emptyInputSignup($lastname, $firstname, $username, $email, $password, $confirm_password, $phonenumb, $birthday
+) {
 
-    if(empty($lastname) || empty($firstname) || empty($username) || empty($email) || empty($password) || empty($confirm_password) || empty($phonenumb) || empty($birthday)){
+    if (empty($lastname) || empty($firstname) || empty($username) || empty($email) || empty($password) || empty($confirm_password) || empty($phonenumb) || empty($birthday)) {
         $result = true;
-    }
-
-    else {
+    } else {
         $result = false;
     }
     return $result;
 }
 
-function invalidUsername($username){
-    if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
+function invalidUsername($username)
+{
+    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         $result = true;
-    }
-
-    else {
+    } else {
         $result = false;
     }
     return $result;
 }
 
-function invalidEmail($email){
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+function invalidEmail($email)
+{
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
-    }
-
-    else {
+    } else {
         $result = false;
     }
     return $result;
 }
 
-function passwordMatch($password, $confirm_password){
-    if($password !== $confirm_password){
+function passwordMatch($password, $confirm_password)
+{
+    if ($password !== $confirm_password) {
         $result = true;
-    }
-
-    else {
+    } else {
         $result = false;
     }
     return $result;
 }
 
-function usernameOrEmailExists($conn, $username, $email){
+function usernameOrEmailExists($conn, $username, $email)
+{
     $sql = "SELECT * FROM users WHERE usersUid = ? OR usersEmail = ?;";
     $stmt = mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($stmt, $sql)){
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../sign_up.php");
         exit();
     }
@@ -58,11 +54,9 @@ function usernameOrEmailExists($conn, $username, $email){
 
     $resultData = mysqli_stmt_get_result($stmt);
 
-    if($row = mysqli_fetch_assoc($resultData)){
+    if ($row = mysqli_fetch_assoc($resultData)) {
         return $row;
-    }
-
-    else {
+    } else {
         $result = false;
         return $result;
     }
@@ -70,10 +64,11 @@ function usernameOrEmailExists($conn, $username, $email){
     mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $lastname, $firstname, $username, $email, $password, $phonenumb, $birthday){
+function createUser($conn, $lastname, $firstname, $username, $email, $password, $phonenumb, $birthday)
+{
     $sql = "INSERT INTO users (usersLastName, usersFirstName, usersUid, usersEmail, usersPassword, usersPhonenumber, usersBirthday) VALUES (?, ?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($stmt, $sql)){
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../sign_up.php?error=stmtfailed");
         exit();
     }
@@ -86,21 +81,21 @@ function createUser($conn, $lastname, $firstname, $username, $email, $password, 
     exit();
 }
 
-function emptyInputLogin($username, $password) {
-    if(empty($username) || empty($password)) {
+function emptyInputLogin($username, $password)
+{
+    if (empty($username) || empty($password)) {
         $result = true;
-    }
-
-    else {
+    } else {
         $result = false;
     }
     return $result;
 }
 
-function loginUser($conn, $username, $password){
+function loginUser($conn, $username, $password)
+{
     $uidExist = usernameOrEmailExists($conn, $username, $username);
 
-    if($uidExist === false){
+    if ($uidExist === false) {
         header("location: ../login.php?error=wronglogin");
         exit();
     }
@@ -108,11 +103,10 @@ function loginUser($conn, $username, $password){
     $passwordHashed = $uidExist["usersPassword"];
     $checkPassword = password_verify($password, $passwordHashed);
 
-    if($checkPassword === false){
+    if ($checkPassword === false) {
         header("location: ../login.php?error=wronglogin");
         exit();
-    }
-    else if($checkPassword === true){
+    } else if ($checkPassword === true) {
         session_start();
         $_SESSION["userid"] = $uidExist["usersId"];
         $_SESSION["useruid"] = $uidExist["usersUid"];

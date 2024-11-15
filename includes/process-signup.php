@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST["submit"])){
+if (isset($_POST["submit"])) {
     $lastname = $_POST["last-name"];
     $firstname = $_POST["first-name"];
     $username = $_POST["username"];
@@ -13,32 +13,28 @@ if(isset($_POST["submit"])){
     require_once 'dbh.php';
     require_once 'functions.php';
 
-    if(emptyInputSignup($lastname, $firstname, $username, $email, $password, $confirm_password, $phonenumb, $birthday) !== false){
+    if (emptyInputSignup($lastname, $firstname, $username, $email, $password, $confirm_password, $phonenumb, $birthday) !== false) {
         header("location: ../sign_up.php?error=emptyinput");
         exit();
     }
-    if(invalidUsername($username) !== false){
+    if (invalidUsername($username) !== false) {
         header("location: ../sign_up.php?error=invalidUsername");
         exit();
     }
-    if(invalidEmail($email) !== false){
+    if (invalidEmail($email) !== false) {
         header("location: ../sign_up.php?error=invalidemail");
         exit();
     }
-    if(passwordMatch($password, $confirm_password) !== false){
+    if (passwordMatch($password, $confirm_password) !== false) {
         header("location: ../sign_up.php?error=passworddontmatch");
         exit();
     }
-    if(usernameOrEmailExists($conn, $username, $email) !== false){
+    if (usernameOrEmailExists($conn, $username, $email) !== false) {
         header("location: ../sign_up.php?error=usernametaken");
         exit();
     }
     createUser($conn, $lastname, $firstname, $username, $email, $password, $phonenumb, $birthday);
-}
-else {
+} else {
     header("location: ../sign_up.php");
     exit();
 }
-
-
-
