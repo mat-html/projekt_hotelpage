@@ -4,61 +4,63 @@ include("navbar.php");
 
 ?>
 <section>
-    <div class="container">
-        <h1 class="display-2">Sign Up</h1>
+    <div class="container-fluid page-title">
+        <h1 class="h1">Sign Up</h1>
     </div>
-    <div class="container">
+    <div class="container border-box">
         <form action="includes/process-signup.php" method="POST">
-            <div class="input-group mt-3">
-                <label for="last-name"></label>
-                <span class="input-group-text">Last name</span>
-                <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Enter your last name" required>
-            </div>
-            <br>
-            <div class="input-group">
-                <label for="first-name"></label>
-                <span class="input-group-text">First name</span>
-                <input type="text" class="form-control" name="first-name" id="first-name" placeholder="Enter your first name" required>
-            </div>
-            <br>
-            <div class="input-group">
-                <label for="username"></label>
-                <span class="input-group-text">Username</span>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username" required>
-            </div>
-            <br>
-            <div class="input-group">
-                <label for="email"></label>
-                <span class="input-group-text">E-mail</span>
-                <input type="text" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-            </div>
-            <br>
-            <div class="input-group">
-                <label for="password"></label>
-                <span class="input-group-text">Password</span>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <br>
-            <div class="input-group">
-                <label for="confirm_password"></label><br>
-                <span class="input-group-text">Confirm password</span>
-                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your new password" required>
-            </div>
-            <br>
-            <div class="input-group">
-                <label for="phone-numb"></label>
-                <span class="input-group-text">Phone number</span>
-                <input type="text" class="form-control" name="phone-numb" id="phone-numb" placeholder="123 456 789" required>
-            </div>
-            <br>
-            <div class="input-group">
-                <lable for="date-of-birth"></lable>
-                <span class="input-group-text">Date of birth</span>
-                <input class="form-control" type="date" name="date-of-birth" id="date-of-birth" placeholder="DD.MM.YYYY" required>
-            </div>
-            <br>
-            <div class="d-grid">
-                <button type="submit" name="submit" class="btn btn-primary">Sign In</button>
+            <div class="container" id="form">
+                <div class="input-group mt-3">
+                    <label for="last-name"></label>
+                    <input type="text" class="form-control" name="last-name" id="last-name"
+                        placeholder="Enter your last name" required>
+                </div>
+                <br>
+                <div class="input-group">
+                    <label for="first-name"></label>
+                    <input type="text" class="form-control" name="first-name" id="first-name"
+                        placeholder="Enter your first name" required>
+                </div>
+                <br>
+                <div class="input-group">
+                    <label for="username"></label>
+                    <input type="text" class="form-control" name="username" id="username"
+                        placeholder="Enter your username" required>
+                </div>
+                <br>
+                <div class="input-group">
+                    <label for="email"></label>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="name@example.com"
+                        required>
+                </div>
+                <br>
+                <div class="input-group">
+                    <label for="password"></label>
+                    <input type="password" class="form-control" id="password" name="password"
+                        placeholder="Enter your password" required>
+                </div>
+                <br>
+                <div class="input-group">
+                    <label for="confirm_password"></label><br>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password"
+                        placeholder="Confirm your new password" required>
+                </div>
+                <br>
+                <div class="input-group">
+                    <label for="phone-numb"></label>
+                    <input type="text" class="form-control" name="phone-numb" id="phone-numb" placeholder="+43 123 456 789"
+                        required>
+                </div>
+                <br>
+                <div class="input-group">
+                    <lable for="date-of-birth"></lable>
+                    <input class="form-control" type="date" name="date-of-birth" id="date-of-birth"
+                        placeholder="DD.MM.YYYY" required>
+                </div>
+                <br>
+                <div class="d-grid">
+                    <button type="submit" name="submit" class="btn btn-nav btn-outline mt-3">Sign In</button>
+                </div>
             </div>
         </form>
         <?php
