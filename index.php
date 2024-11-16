@@ -1,6 +1,7 @@
 <?php
 
-include("navbar.php");
+include("./include()/navbar.php");
+include("cockie_handler.php");
 
 ?>
 
@@ -34,5 +35,5 @@ include("navbar.php");
 </section>
 
 <?php
-include("footer.php");
+include("./include()/footer.php");
 ?>

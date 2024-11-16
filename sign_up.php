@@ -1,6 +1,6 @@
 <?php
 
-include("navbar.php");
+include("./include()/navbar.php");
 
 ?>
 <section>
@@ -84,5 +84,5 @@ include("navbar.php");
 </section>
 
 <?php
-include("footer.php");
+include("./include()/footer.php");
 ?>
