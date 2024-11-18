@@ -36,4 +36,5 @@ include("cockie_handler.php");
 
 <?php
 include("./include()/footer.php");
+//test hallo
 ?>
