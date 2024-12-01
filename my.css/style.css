@@ -266,10 +266,14 @@ footer {
     justify-content: end;
     align-items: end;
     top: 100%;
-    position:relative;
+    position: relative;
     top: 100%;
 }
-
+#footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
 /* COCKIE BANNER */
 #cookie-banner {
     position: fixed;
@@ -302,67 +306,3 @@ footer {
     background-color: #0056b3;
 }
 
-/* 
-a .nav-link {
-    text-decoration: none;
-    color: var(--c-brand-primary);
-    transition: var(--transform);
-}
-
-a:hover{
-    color: var(--c-brand-secondary);
-} 
-
-img {
-    max-width: 100vw;
-    height: auto;
-}
-
-.section-padding {
-    padding-top: 140px;
-    padding-bottom: 140px;
-}
-
-.btn {
-    font-weight: 500;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    border-radius: 3px;
-    padding: 0.25em 0.5em;
-    border: 3px solid;
-}
-
-.btn-brand {
-    background-color: var(--c-brand-primary);
-    border-color: var(--c-brand-primary);
-    color: var(--c-);
-}
-
-.btn-brand:hover {
-    background-color: var(--c-brand-lignt);
-    border-color: var(--c-brand-lignt);
-    color: var(--c-brand-primary);
-}
-
-.login {
-    background-color: var(--c-body);
-    border-color: var(--c-brand-primary);
-    color: var(--c-brand-primary);
-}
-
-
- .navbar-nav .navbar-link {
-    font-weight: 500;
-    color: var(--c-brand-primary);
-}
-
-.navbar-nav .nav-link .active {
-    color: var(--c-brand-primary);
-}
-
-#hero {
-    background: linear-gradient(#0000007a, #0000006b), url(../img/hotel3.jpg);
-    background-repeat: no-repeat;
-    background-size: 100vw;
-    
-} */

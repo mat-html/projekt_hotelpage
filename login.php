@@ -8,7 +8,7 @@ include("./include()/navbar.php");
     <h1 class="h1">Login</h1>
 </div>
 
-<div class="container border-box">
+<main class="form-singin w-100 m-auto">
     <form action="includes/process-login.php" method="POST">
         <div class="container" id="form">
             <div class="input-group mb-3 mt-3">
@@ -20,9 +20,6 @@ include("./include()/navbar.php");
             <label for="password"></label><br>
             <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password"
                 required>
-        </div>
-        <div class="text-center">
-            <p>Password vergessen? <a href="password_reset.php" class="text-decoration-none">Reset now!</a></p>
         </div>
         <div class="d-grid gap-3">
             <button type="submit" name="submit" class="btn btn-nav btn-outline mt-3">Log In</button>
@@ -38,8 +35,7 @@ include("./include()/navbar.php");
         }
     }
     ?>
-</div>
-
+</main>
 <?php
 include("./include()/footer.php");
 ?>
