@@ -17,6 +17,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="reservation_confirmation.php">Reservations</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="rooms.php">Rooms</a>
+                    </li>
                     <?php
                         $current_page = $_SERVER['REQUEST_URI'];
 

@@ -103,14 +103,23 @@ function loginUser($conn, $username, $password)
     $passwordHashed = $uidExist["usersPassword"];
     $checkPassword = password_verify($password, $passwordHashed);
 
+
     if ($checkPassword === false) {
         header("location: ../login.php?error=wronglogin");
         exit();
     } else if ($checkPassword === true) {
         session_start();
-        $_SESSION["userid"] = $uidExist["usersId"];
+        
+
+        $_SESSION["userid"] = $uidExist["id"];
         $_SESSION["useruid"] = $uidExist["usersUid"];
-        header("location: ../index.php");
+        $_SESSION["usersType"] = $uidExist["usersType"];
+
+        if ($_SESSION["usersType"] == "admin") {
+            header("location: ../admin.php");
+        } else {
+            header("location: ../index.php");
+        }
         exit();
     }
 }

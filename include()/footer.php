@@ -14,7 +14,7 @@
                 <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="impressum.php" class="nav-link p-0 text-white">Impressum</a></li>
                 <li class="nav-item mb-2"><a href="hilfe.php" class="nav-link p-0 text-white">Hilfe</a></li>    
-                <li class="nav-item mb-2"><a href="../privacy_policy.php" class="nav-link p-0 text-white">Privacy Policy</a></li>
+                <li class="nav-item mb-2"><a href="privacy_policy.php" class="nav-link p-0 text-white">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-0 col-md-1"></div>

@@ -1,10 +1,5 @@
 <?php 
 
-  if(!isset($_SESION["userUid"]))
-  {
-    header('./login.php');
-  }
-
   include("./admin/header.php");
   include("./admin/navbar.php");
 ?>

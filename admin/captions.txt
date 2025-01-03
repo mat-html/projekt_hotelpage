@@ -2,3 +2,4 @@ Image: hotelroom5.jpg | Caption: dfsdfdsfsdfsdfsdfsdfsdfds
 Image: hotelroom5.jpg | Caption: dassdasdsadasdas
 Image: hotelroom5.jpg | Caption: dassdasdsadasdas
 Image: hotelroom5.jpg | Caption: dassdasdsadasdas
+Image: hotelroom2.jpg | Caption: Room 2
