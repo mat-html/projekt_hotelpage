@@ -81,6 +81,7 @@ function createUser($conn, $lastname, $firstname, $username, $email, $password, 
     exit();
 }
 
+// LOG-IN FUNCTIONS
 function emptyInputLogin($username, $password)
 {
     if (empty($username) || empty($password)) {
@@ -122,4 +123,97 @@ function loginUser($conn, $username, $password)
         }
         exit();
     }
+}
+
+// RESERVATION FUNCTIONS
+
+function emptyInputReservation($checkin, $checkout, $room) {
+    if (empty($checkin) || empty($checkout) || empty($room)) {
+        return true; 
+    }
+    return false; 
+}
+
+
+function datesTaken($conn, $checkin, $checkout, $room)
+{
+    $sql = "SELECT * FROM reservation WHERE zimmerId = ? AND (
+                (`from` <= ? AND `to` >= ?) OR
+                (`from` < ? AND `to` > ?)
+            );";
+
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        return false;
+    }
+
+    mysqli_stmt_bind_param($stmt, "sssss", $room, $checkout, $checkin, $checkin, $checkout);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if (mysqli_num_rows($result) > 0) {
+        mysqli_stmt_close($stmt);
+        return true; // Dates are taken
+    }
+
+    mysqli_stmt_close($stmt);
+    return false; // Dates are not taken
+}
+
+
+
+
+
+
+
+function datesMatch($checkin, $checkout) {
+
+    $checkinDate = new DateTime($checkin);
+    $checkoutDate = new DateTime($checkout);
+
+
+    if ($checkinDate >= $checkoutDate) {
+        return true;
+    }
+    return false;
+}
+
+
+
+function createReservation($conn, $userUid, $room, $checkin, $checkout, $breakfast, $parking, $pets)
+{
+
+    $sqlUser = "SELECT * FROM user1 WHERE usersUid = ?;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sqlUser)) {
+        header("location: ../reservation.php?error=userstmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $userUid);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $user = mysqli_fetch_assoc($result);
+    $userId = $user['usersUid']; 
+    mysqli_stmt_close($stmt);
+
+
+    $sql = "INSERT INTO reservation (userId, zimmerId, `from`, `to`, pets, breakfast, parking) 
+            VALUES (?, ?, ?, ?, ?, ?, ?);";
+
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../reservation.php?error=stmtfailed");
+        exit();
+    }
+
+
+    mysqli_stmt_bind_param($stmt, "sssssss", $userId, $room, $checkin, $checkout, $pets, $breakfast, $parking);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+
+    header("location: ../reservation.php?error=none");
+    exit();
 }
