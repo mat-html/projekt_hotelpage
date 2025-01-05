@@ -32,10 +32,7 @@ session_start();
                             <a class="nav-link text-white" href="news.php">News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="impressum.php">Impressum</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="hilfe.php">Hilfe</a>
+                            <a class="nav-link text-white" href="rooms.php">Rooms</a>
                         </li>
                         <?php
                           $current_page = $_SERVER['REQUEST_URI'];
@@ -44,7 +41,7 @@ session_start();
                           $is_home = ($current_page === '/projekt_hotel/index.php' || $current_page === '/projekt_hotel/');
                           if (isset($_SESSION["useruid"])) {
                             echo '<li class="nav-item"><a class="nav-link text-white" href="profile.php">Profile Page</a></li>';
-                            echo '<li class="nav-item"><a class="nav-item text-white" href="reservation.php">Reservation</a>';
+                            echo '<li class="nav-item"><a class="nav-link text-white" href="reservation.php">My reservations</a>';
                             echo '<li class="nav-btn"><a class="btn btn-nav btn-outline" href="includes/logout.php">Log out</a></li>';
                           } else {
                             if (!$is_home) {

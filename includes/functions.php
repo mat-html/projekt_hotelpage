@@ -217,3 +217,70 @@ function createReservation($conn, $userUid, $room, $checkin, $checkout, $breakfa
     header("location: ../reservation.php?error=none");
     exit();
 }
+
+// DELETE USER
+function deleteUser($conn, $userId){
+    
+    $sql = 'DELETE FROM user1 WHERE id = ?';
+
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../admin/users.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "i", $userId);
+    
+    if(mysqli_stmt_execute($stmt)){
+        header("location: ../admin/users.php?error=none");
+    } else {
+        header("location: ../admin/users.php?error=deletionfailed");
+    }
+    mysqli_stmt_close($stmt);
+    exit();
+}
+
+// DELETE RESERVATION
+function deleteReservation($conn, $reservationId){
+    
+    $sql = 'DELETE FROM reservation WHERE reservationId = ?';
+
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../reservation.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "i", $reservationId);
+    
+    if(mysqli_stmt_execute($stmt)){
+        header("location: ../reservation.php?error=none");
+    } else {
+        header("location: ../reservation.php?error=deletionfailed");
+    }
+    mysqli_stmt_close($stmt);
+    exit();
+}
+
+// DISPLAY NEWS PREVIEW
+
+function openNews($conn, $newsId){
+        // SQL query to fetch the news by ID
+    $sql = "SELECT * FROM news WHERE newsId = ?";
+    if ($stmt = mysqli_prepare($conn, $sql)) {
+        mysqli_stmt_bind_param($stmt, "i", $newsId);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+                
+                // If the news item is found, return the result
+        if (mysqli_num_rows($result) > 0) {
+            return mysqli_fetch_assoc($result);
+        } else {
+            return null; // No news found
+        }
+        
+        mysqli_stmt_close($stmt);
+    } else {
+        return null; // Query failed
+}
+}
