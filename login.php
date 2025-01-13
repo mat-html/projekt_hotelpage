@@ -4,11 +4,11 @@ include("./include()/navbar.php");
 
 ?>
 
-<div class="container-fluid page-title">
+<div class="container-fluid page-title mb-5">
     <h1 class="h1">Login</h1>
 </div>
 
-<main class="form-singin w-100 m-auto">
+<main class="form-singin w-100 m-auto mt-5 mb-5">
     <form action="includes/process-login.php" method="POST">
         <div class="container" id="form">
             <div class="input-group mb-3 mt-3">

@@ -1,5 +1,6 @@
 <?php
 
+// CHECKS IF ANY INPUT IS EMPTY FOR SINGIN PAGE
 function emptyInputSignup($lastname, $firstname, $username, $email, $password, $confirm_password, $phonenumb, $birthday
 ) {
 
@@ -11,6 +12,7 @@ function emptyInputSignup($lastname, $firstname, $username, $email, $password, $
     return $result;
 }
 
+// CHECKS IF USERNAME IS VALID OR IT CONTAINS FORBIDEN SIGNS
 function invalidUsername($username)
 {
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
@@ -21,6 +23,7 @@ function invalidUsername($username)
     return $result;
 }
 
+// CHECK IF EMAIL IS VALID OR NOT
 function invalidEmail($email)
 {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -31,6 +34,7 @@ function invalidEmail($email)
     return $result;
 }
 
+// CEKS IF BOTH PASSWORD INPUTS ARE MATCHING 
 function passwordMatch($password, $confirm_password)
 {
     if ($password !== $confirm_password) {
@@ -41,6 +45,7 @@ function passwordMatch($password, $confirm_password)
     return $result;
 }
 
+// CHECKS IF EMAIL OR USERNAME IS ALLREADY BEEN TAKEN
 function usernameOrEmailExists($conn, $username, $email)
 {
     $sql = "SELECT * FROM user1 WHERE usersUid = ? OR usersEmail = ?;";
@@ -64,6 +69,7 @@ function usernameOrEmailExists($conn, $username, $email)
     mysqli_stmt_close($stmt);
 }
 
+// PUSHES ALL DATA INTO THE DATABASE FROM SINGIN AND HASHES PASSWORD
 function createUser($conn, $lastname, $firstname, $username, $email, $password, $phonenumb, $birthday)
 {
     $sql = "INSERT INTO user1 (usersLastName, usersFirstName, usersUid, usersEmail, usersPassword, usersPhonenumber, usersBirthday) VALUES (?, ?, ?, ?, ?, ?, ?);";
@@ -82,6 +88,8 @@ function createUser($conn, $lastname, $firstname, $username, $email, $password, 
 }
 
 // LOG-IN FUNCTIONS
+
+// CHECKS IF ANY INPUT IS EMPTY
 function emptyInputLogin($username, $password)
 {
     if (empty($username) || empty($password)) {
@@ -92,6 +100,8 @@ function emptyInputLogin($username, $password)
     return $result;
 }
 
+
+// USER-LOGIN FUNCTION AND CHECKING IF THAT USER IS ADMIN OR NOT
 function loginUser($conn, $username, $password)
 {
     $uidExist = usernameOrEmailExists($conn, $username, $username);
@@ -127,6 +137,7 @@ function loginUser($conn, $username, $password)
 
 // RESERVATION FUNCTIONS
 
+// CHECK IF ALL INPUTS NEEDED ARE FILLED
 function emptyInputReservation($checkin, $checkout, $room) {
     if (empty($checkin) || empty($checkout) || empty($room)) {
         return true; 
@@ -134,7 +145,7 @@ function emptyInputReservation($checkin, $checkout, $room) {
     return false; 
 }
 
-
+// CHECK IF THE DATES ARE TAKEN FOR THAT ROOM
 function datesTaken($conn, $checkin, $checkout, $room)
 {
     $sql = "SELECT * FROM reservation WHERE zimmerId = ? AND (
@@ -153,19 +164,15 @@ function datesTaken($conn, $checkin, $checkout, $room)
 
     if (mysqli_num_rows($result) > 0) {
         mysqli_stmt_close($stmt);
-        return true; // Dates are taken
+        return true;
     }
 
     mysqli_stmt_close($stmt);
-    return false; // Dates are not taken
+    return false;
 }
 
 
-
-
-
-
-
+// CHECK IF DATES ARE CORECT
 function datesMatch($checkin, $checkout) {
 
     $checkinDate = new DateTime($checkin);
@@ -179,7 +186,7 @@ function datesMatch($checkin, $checkout) {
 }
 
 
-
+// CREATE RESERVATION
 function createReservation($conn, $userUid, $room, $checkin, $checkout, $breakfast, $parking, $pets)
 {
 
@@ -265,22 +272,20 @@ function deleteReservation($conn, $reservationId){
 // DISPLAY NEWS PREVIEW
 
 function openNews($conn, $newsId){
-        // SQL query to fetch the news by ID
     $sql = "SELECT * FROM news WHERE newsId = ?";
     if ($stmt = mysqli_prepare($conn, $sql)) {
         mysqli_stmt_bind_param($stmt, "i", $newsId);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
                 
-                // If the news item is found, return the result
         if (mysqli_num_rows($result) > 0) {
             return mysqli_fetch_assoc($result);
         } else {
-            return null; // No news found
+            return null;
         }
         
         mysqli_stmt_close($stmt);
     } else {
-        return null; // Query failed
+        return null;
 }
 }

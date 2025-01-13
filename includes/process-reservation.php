@@ -15,20 +15,24 @@ if (isset($_POST["submit"])) {
     require_once 'dbh.php';
     require_once 'functions.php';
 
+    if(!isset($_SESSION["useruid"])){
+        header("location: ../login.php?error=not-logged-in");
+    }
+    
     if (emptyInputReservation($checkin, $checkout, $room)) {
-        header("location: ../reservation.php?error=no-room-or-date-selected");
+        header("location: ../rooms.php?error=no-room-or-date-selected");
         exit();
     }
     
     if (datesTaken($conn, $checkin, $checkout, $room)) {
-        header("location: ../reservation.php?error=this-dates-are-taken");
+        header("location: ../rooms.php?error=this-dates-are-taken");
         exit();
     }
     
     
     
     if (datesMatch($checkin, $checkout) !== false) {
-        header("location: ../reservation.php?error=check-in-and-checkout-matching");
+        header("location: ../rooms.php?error=check-in-and-checkout-matching");
         exit();
     }
 
@@ -36,5 +40,5 @@ if (isset($_POST["submit"])) {
     createReservation($conn, $userUid, $room, $checkin, $checkout, $breakfast, $parking, $pets);
 
 } else {
-    header("location: ../reservation.php");
+    header("location: ../rooms.php");
 }

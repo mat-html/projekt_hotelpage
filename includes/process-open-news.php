@@ -1,14 +1,12 @@
 <?php
-session_start(); // Start the session
+session_start();
 
-require_once 'dbh.php'; // Include database connection
+require_once 'dbh.php';
 
-// Check if the 'newsId' is set via GET
+// NEWS PREVIEW
 if (isset($_GET['newsId'])) {
-    // Store the 'newsId' in the session (optional)
     $_SESSION['newsId'] = $_GET['newsId'];
     
-    // Redirect to the preview page to display the news
     header("Location: ../news-preview.php");
     exit();
 } else {

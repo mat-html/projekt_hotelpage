@@ -1,4 +1,4 @@
-<div id="footer">
+<div id="footer" class="mt-5">
 <footer class="footer py-5">
     <div class="container">
         <div class="row align-items-center">

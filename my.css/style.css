@@ -216,7 +216,6 @@ h4, .h4 {
 
 /* FORM */
 form{
-    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

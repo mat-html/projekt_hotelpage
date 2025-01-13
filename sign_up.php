@@ -4,10 +4,10 @@ include("./include()/navbar.php");
 
 ?>
 
-<div class="container-fluid page-title">
+<div class="container-fluid page-title mb-5">
     <h1 class="h1">Sign Up</h1>
 </div>
-<main class="form-signin w-100 m-auto">
+<main class="form-signin w-100 m-auto mt-5 mb-5">
 
     <form action="includes/process-signup.php" method="POST">
         <div class="container" id="form">

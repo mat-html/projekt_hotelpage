@@ -33,7 +33,13 @@
                 aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
               <rect width="100%" height="100%" fill="#55595c"></rect>
               <div class="card-body">
-                <p class="card-title" style="font-weight: bold;"><?php echo $row['newsTitle'] ?></p>
+                <p class="card-title" style="font-weight: bold;">
+                  <?php
+                    $fullTitle = $row['newsTitle'];
+                    $preview = substr($fullTitle, 0, 40);
+                    echo $preview . (strlen($fullTitle) > 40 ? '...' : '');
+                  ?>
+                </p>
                 <p class="card-text">
                   <?php
                     $fullDescription = $row['newsDescription'];
@@ -44,7 +50,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                 <input type="hidden" name="newsId" value="<?php echo $row['newsId']; ?>">
                 <button type="submit" name="submit" class="btn btn-nav btn-outline mt-3">View</button>
-                  <small class="text-body-secondary">9 mins</small>
+                  <small class="text-body-secondary"><?php echo $row['newsDate'] ?></small>
                 </div>
               </div>
             </div>

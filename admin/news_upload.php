@@ -6,7 +6,7 @@ include("navbar.php");
 <form method="POST" action="news_upload.php" enctype="multipart/form-data">
     Select Image: <input type="file" name="image"><br>
     Title: <input type="text" name="title"><br>
-    Description: <input type="text" name="description"><br>
+    Description: <textarea name="description" rows="4" cols="50"></textarea>
     <input type="submit" name="upload" value="Upload Now">
 </form>
 
