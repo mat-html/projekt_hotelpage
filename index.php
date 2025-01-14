@@ -33,30 +33,6 @@ include("cockie_handler.php");
 
     </div>
 </section>
-<main>
-    <div class="row">
-        <div class="col-5">
-            <p>
-                This 4-star superior hotel with panoramic views of the Arlberg ski area is located in the car-free village of Oberlech, directly on the ski slopes. It features an award-winning gourmet restaurant and an indoor pool.
-            </p>
-        </div>
-        <div class="col-5">
-            <p>
-                The Hotel & Chalet Montana is owned by the famous Austrian skier Patrick Ortlieb and offers comfortable and elegant rooms in Alpine style with wooden furniture. All rooms are equipped with a flat-screen cable TV and a modern bathroom. Some rooms include a whirlpool and a balcony.
-            </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-5">
-                <h4 class="h4">SPA & WELLNES</h4>
-        </div>
-        <div class="col-5">
-            <p>
-                The wellness facilities include various saunas, a steam bath, an infrared cabin, and a fitness room. Massages are also available upon request. In winter, you can relax on the sun terrace. A ski school is located directly opposite Hotel Montana.
-            </p>
-        </div>
-    </div>
-</main>
 
 <?php
 include("./include()/footer.php");

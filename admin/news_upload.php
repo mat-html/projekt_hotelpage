@@ -1,74 +1,68 @@
 <?php
-include("header.php");
-include("navbar.php");
+    require("../includes/dbh.php");
+    $sql = "Select * From news";
+    $result = mysqli_query($conn, $sql);
+
+    include("header.php");
+    include("navbar.php");
 
 ?>
-<form method="POST" action="news_upload.php" enctype="multipart/form-data">
+<div class="container-fluid page-title mb-5">
+  <div clas="row">
+    <div class="text-center col-sm-12">
+      <h1 class="h1">News</h1>
+    </div>
+  </div>
+</div>
+<form method="POST" action="../includes/process-news-upload.php" enctype="multipart/form-data">
     Select Image: <input type="file" name="image"><br>
     Title: <input type="text" name="title"><br>
     Description: <textarea name="description" rows="4" cols="50"></textarea>
     <input type="submit" name="upload" value="Upload Now">
 </form>
+<div class="album py-5 bg-body-tertiary mt-3">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <?php
+        while ($row = mysqli_fetch_assoc($result)) {
 
-<?php
-if (isset($_POST['upload'])) {
-    // Get file details
-    $image_name = $_FILES['image']['name'];
-    $image_size = $_FILES['image']['size'];
-    $image_type = $_FILES['image']['type'];
-    $image_temp = $_FILES['image']['tmp_name'];
-    
-    // Get title and description
-    $title = $_POST['title'];
-    $description = $_POST['description'];
+      ?>
 
-    require_once '../includes/dbh.php'; // Include your DB connection
-    
-    // Define allowed file types
-    $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
-    $imageExtension = explode('.', $image_name);
-    $imageExtension = strtolower(end($imageExtension));
-    
-    // Check if file type is allowed
-    if (!in_array($image_type, $allowed_types)) {
-        echo "Only JPEG, PNG, and GIF files are allowed.";
-    }
-    // Check if file size is less than 25MB
-    elseif ($image_size > 25 * 1024 * 1024) {
-        echo "File size should not exceed 25MB.";
-    } else {
-        // Define the target directory to save the uploaded image
-        $target_dir = "uploads/";
-        
-        // Ensure the directory exists
-        if (!is_dir("../" . $target_dir)) {
-            mkdir($target_dir, 0777, true);
+        <div class="col">
+          <form action="../includes/process-open-news.php" method="GET" class="d-inline">
+            <div class="card shadow-sm">
+              <img src="<?php echo "../" . $row['newsImg'] ?>" class="bd-placeholder-img card-img-top" width="100%"
+                height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+              <div class="card-body">
+                <p class="card-title" style="font-weight: bold;">
+                  <?php
+                    $fullTitle = $row['newsTitle'];
+                    $preview = substr($fullTitle, 0, 40);
+                    echo $preview . (strlen($fullTitle) > 40 ? '...' : '');
+                  ?>
+                </p>
+                <p class="card-text">
+                  <?php
+                    $fullDescription = $row['newsDescription'];
+                    $preview = substr($fullDescription, 0, 100);
+                    echo $preview . (strlen($fullDescription) > 100 ? '...' : '');
+                  ?>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                <input type="hidden" name="newsId" value="<?php echo $row['newsId']; ?>">
+                <button type="submit" name="submit" class="btn btn-nav btn-outline mt-3">View</button>
+                  <small class="text-body-secondary"><?php echo $row['newsDate'] ?></small>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      <?php 
         }
+      ?>
+    </div>
+  </div>
+</div>
 
-        // Define a unique filename for the uploaded image 
-        $target_file = $target_dir . uniqid() . '.' . $imageExtension;
-
-        // Move the uploaded file to the target directory
-        if (move_uploaded_file($image_temp, "../" . $target_file)) {
-            // Get the current date and time
-            $newsDate = date('Y-m-d H:i:s'); // Current date and time in 'YYYY-MM-DD HH:MM:SS' format
-
-            // SQL to insert image name, title, description, and date into the database
-            $sql = "INSERT INTO news (newsImg, newsTitle, newsDescription, newsDate) VALUES (?, ?, ?, ?)";
-            
-            // Prepare the statement
-            if ($stmt = mysqli_prepare($conn, $sql)) {
-                mysqli_stmt_bind_param($stmt, "ssss", $target_file, $title, $description, $newsDate);
-                mysqli_stmt_execute($stmt);
-                mysqli_stmt_close($stmt);
-
-                echo "Image uploaded and data saved successfully!";
-            } else {
-                echo "Error in SQL query!";
-            }
-        } else {
-            echo "There was an error uploading your file.";
-        }
-    }
-}
-?>

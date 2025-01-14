@@ -127,7 +127,7 @@ function loginUser($conn, $username, $password)
         $_SESSION["usersType"] = $uidExist["usersType"];
 
         if ($_SESSION["usersType"] == "admin") {
-            header("location: ../admin.php");
+            header("location: ../admin/admin.php");
         } else {
             header("location: ../index.php");
         }
@@ -289,3 +289,4 @@ function openNews($conn, $newsId){
         return null;
 }
 }
+

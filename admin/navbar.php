@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg">
         <div class="container mt-3">
-            <a class="navbar-brand text-white" href="index.php">Muster Hotel</a>
+            <a class="navbar-brand text-white" href="../admin.php">Muster Hotel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
