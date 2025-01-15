@@ -23,9 +23,11 @@
             <div class="mb-3 col-3">
                 <select class="form-select" name="choose-room" aria-label="Default select example">
                     <option selected>Select your type of room</option>
-                    <option value="1">Room 1</option>
-                    <option value="2">Room 2</option>
-                    <option value="3">Room 3</option>
+                    <?php
+                        while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <option value="1"><?php echo $row["roomName"]; ?></option>
+                    <?php } ?>
                 </select>
             </div>
             <!-- dropdown menu ends -->
@@ -55,6 +57,10 @@
         </div>
 </form>
 </div>
+<?php 
+    $sql = "Select * From room";
+    $result = mysqli_query($conn, $sql);
+?>
 
 <!-- ROOMS -->
 <div class="container mt-5">

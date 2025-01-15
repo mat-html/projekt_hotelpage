@@ -9,6 +9,18 @@ include("./include()/navbar.php");
 </div>
 
 <div class="container">
+    <div class="row align-items-center">
+        <div class="col-2">
+            <label for="adrian">Adrian Hassan</label>
+            <img class="img-fluid" src="./img/adrian.JPG" id="adrian" alt="Adrian Hassan">
+        </div>
+        <div class="col-2">
+            <label for="jovan">Jovan Matic</label>
+            <img class="img-fluid" src="./img/jovan.JPG" id="jovan" alt="Jovan Matic">
+        </div>
+    </div>
+</div>
+<div class="container">
     <br>
     <p>Muster Hotel GmbH</p>
     <p>Mustergasse 1<br> 1010 Wien</p>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Jan 2025 um 23:22
+-- Erstellungszeit: 15. Jan 2025 um 01:18
 -- Server-Version: 10.4.32-MariaDB
 -- PHP-Version: 8.2.12
 
@@ -45,7 +45,8 @@ INSERT INTO `news` (`newsId`, `newsTitle`, `newsDescription`, `newsImg`, `newsDa
 (17, 'New dishes on our menu - come and take a look in our menu', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n', 'uploads/67859230a25dd.jpg', '2025-01-13'),
 (18, 'New Season opening party', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n', 'uploads/678592f98bb42.jpg', '2025-01-13'),
 (19, 'New at night adventures for our gests', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n', 'uploads/6785931daa365.jpg', '2025-01-13'),
-(20, 'New at night adventures for our gests', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n', 'uploads/6786bd344a22d.jpg', '2025-01-14');
+(20, 'New at night adventures for our gests', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n', 'uploads/6786bd344a22d.jpg', '2025-01-14'),
+(25, 'jlfgkjsadlkjfrksdajflsdjafj', 'lkjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', 'uploads/6786efba6520f.jpg', '2025-01-15');
 
 -- --------------------------------------------------------
 
@@ -71,9 +72,8 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`reservationId`, `userId`, `zimmerId`, `from`, `to`, `price`, `pets`, `breakfast`, `parking`, `aproved`) VALUES
-(1, 'mario', 3, '2025-01-16', '2025-01-25', 0, 'no', 'no', 'no', 'Aproved'),
-(2, 'mario', 1, '2025-01-30', '2025-02-09', 0, 'no', 'no', 'true', 'Aproved'),
-(10, 'nikola123', 1, '2025-01-22', '2025-01-26', 0, 'no', 'no', 'no', 'Pending');
+(12, 'adrian12', 2, '2025-01-22', '2025-01-26', 0, 'no', 'Yes', 'no', 'Pending'),
+(13, 'adrian12', 1, '2025-02-19', '2025-02-28', 0, 'Yes', 'Yes', 'no', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -94,9 +94,10 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`roomId`, `roomName`, `roomDescription`, `roomPrice`, `roomImg`) VALUES
-(0, 'premium room', 'row\r\nrow\r\nrow\r\nrow\r\n', 50, 'uploads/6786c94a4296a.jpg'),
-(1, 'ROOM 1', 'short description', 40, 'uploads/6786c94a4296a.jpg'),
-(3, 'Room 3', 'Another short description', 55, 'uploads/6786c94a4296a.jpg');
+(1, 'Room 1', 'short description', 40, 'uploads/6786c94a4296a.jpg'),
+(2, ' Room 2', 'row\r\nrow\r\nrow\r\nrow\r\n', 50, 'uploads/6786c94a4296a.jpg'),
+(3, 'Room 3', 'Another short description', 55, 'uploads/6786c94a4296a.jpg'),
+(5, 'room 5', 'hier is some short description\r\n', 65, 'uploads/6786f87736f3a.jpg');
 
 -- --------------------------------------------------------
 
@@ -123,7 +124,8 @@ CREATE TABLE `user1` (
 INSERT INTO `user1` (`id`, `usersLastName`, `usersFirstName`, `usersUid`, `usersEmail`, `usersPassword`, `usersPhonenumber`, `usersBirthday`, `usersType`) VALUES
 (6, 'blabla', 'bvlsl', 'mario', 'mario@gmail.com', '$2y$10$yhNRLe5nBxwqaNBTcG2pmuyoBzuuqPLlgOIEuQrwxOqSUeKVX7CJy', 1429419913, '8958-05-12', NULL),
 (7, 'matiic', 'jovan', 'jovan218', 'jovan@gmail.com', '$2y$10$9xZuBPGSLaVSJHCd33edDuUxO5tFcU562uzPEYvY7bmRPNqhT85Ky', 2147483647, '7349-08-12', 'admin'),
-(10, 'marjanovic', 'nikola', 'nikola123', 'nikola@exm.com', '$2y$10$Z9tDA5KZgvs5k4KHRj03judc8s3Cm6wLQt5lHB0bPcfed5E5iqIlG', 661234567, '1996-06-14', NULL);
+(10, 'marjanovic', 'nikola', 'nikola123', 'nikola@exm.com', '$2y$10$Z9tDA5KZgvs5k4KHRj03judc8s3Cm6wLQt5lHB0bPcfed5E5iqIlG', 661234567, '1996-06-14', NULL),
+(11, 'Hassan', 'Adrian', 'adrian12', 'adiran@example.com', '$2y$10$TLo0o5j4ge53zYFRUOGntegtqeyY.oJ0ZNe3uQthVhPEyS1Cl1BOm', 2147483647, '0000-00-00', NULL);
 
 --
 -- Indizes der exportierten Tabellen
@@ -165,19 +167,25 @@ ALTER TABLE `user1`
 -- AUTO_INCREMENT für Tabelle `news`
 --
 ALTER TABLE `news`
-  MODIFY `newsId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `newsId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT für Tabelle `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `reservationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `reservationId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT für Tabelle `room`
+--
+ALTER TABLE `room`
+  MODIFY `roomId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT für Tabelle `user1`
 --
 ALTER TABLE `user1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints der exportierten Tabellen
@@ -187,8 +195,8 @@ ALTER TABLE `user1`
 -- Constraints der Tabelle `reservation`
 --
 ALTER TABLE `reservation`
-  ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`zimmerId`) REFERENCES `room` (`roomId`),
-  ADD CONSTRAINT `reservation_ibfk_3` FOREIGN KEY (`userId`) REFERENCES `user1` (`usersUid`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `reservation_ibfk_3` FOREIGN KEY (`userId`) REFERENCES `user1` (`usersUid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `reservation_ibfk_4` FOREIGN KEY (`zimmerId`) REFERENCES `room` (`roomId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

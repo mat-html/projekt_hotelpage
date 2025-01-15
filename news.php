@@ -2,7 +2,7 @@
 
   require("includes/dbh.php");
 
-  $sql = "Select * From news";
+  $sql = "Select * From news ORDER BY newsId DESC";
 
   $result = mysqli_query($conn, $sql);
 
