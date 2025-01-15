@@ -30,8 +30,20 @@
         <form action="./includes/process-update-profile.php" method="post">
             <!-- Editable fields for username and phone number -->
             <div class="mb-3">
+                <label for="firstname" class="form-label">Firstname:</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" value="<?php echo htmlspecialchars($row['usersFirstName']); ?>">
+            </div>
+            <div class="mb-3">
+                <label for="Lastname" class="form-label">Lastname:</label>
+                <input type="text" class="form-control" id="Lastname" name="lastname" value="<?php echo htmlspecialchars($row['usersLastName']); ?>">
+            </div>
+            <div class="mb-3">
                 <label for="username" class="form-label">Username:</label>
                 <input type="text" class="form-control" id="username" name="username" value="<?php echo htmlspecialchars($row['usersUid']); ?>">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">email:</label>
+                <input type="text" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($row['usersEmail']); ?>">
             </div>
 
             <div class="mb-3">
@@ -41,7 +53,7 @@
 
             <div class="mb-3">
                 <label for="birthday" class="form-label">Birthday:</label>
-                <input type="text" class="form-control" id="birthday" value="<?php echo htmlspecialchars($row['usersBirthday']); ?>" readonly>
+                <input type="text" class="form-control" id="birthday" value="<?php echo htmlspecialchars($row['usersBirthday']); ?>" disabled>
             </div>
             <button type="submit" class="btn btn-nav btn-outline">Update Profile</button>
         </form>
